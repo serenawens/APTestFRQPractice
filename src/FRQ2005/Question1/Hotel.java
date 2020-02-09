@@ -19,6 +19,7 @@ public class Hotel {
             if(rooms[index] ==null)
             {
                 Reservation newRes = new Reservation(guestName, index);
+                rooms[index] = newRes;
                 return newRes;
             }
         }
@@ -33,9 +34,18 @@ public class Hotel {
         {
             Reservation newRes = new Reservation(waitList.get(0), res.getRoomNumber());
             waitList.remove(waitList.get(0));
+            rooms[res.getRoomNumber()] = newRes;
             return newRes;
         }
         return null;
+    }
+
+    public Reservation[] getRooms() {
+        return rooms;
+    }
+
+    public ArrayList<String> getWaitList() {
+        return waitList;
     }
 
     @Override
