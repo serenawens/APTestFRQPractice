@@ -11,4 +11,12 @@ public class Reservation {
     }
     public int getRoomNumber()
     {return roomNumber;}
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "guest='" + guest + '\'' +
+                ", roomNumber=" + roomNumber +
+                '}';
+    }
 }

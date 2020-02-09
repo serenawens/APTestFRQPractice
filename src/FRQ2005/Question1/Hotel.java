@@ -1,10 +1,16 @@
 package FRQ2005.Question1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Hotel {
     private Reservation[] rooms;
     private ArrayList<String> waitList;
+
+    public Hotel(int numOfRooms) {
+        rooms = new Reservation[numOfRooms];
+        waitList = new ArrayList<>();
+    }
 
     public Reservation requestRoom(String guestName)
     {
@@ -30,5 +36,13 @@ public class Hotel {
             return newRes;
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "rooms=" + Arrays.toString(rooms) +
+                ", waitList=" + waitList +
+                '}';
     }
 }
