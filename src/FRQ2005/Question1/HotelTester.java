@@ -3,6 +3,7 @@ package FRQ2005.Question1;
 public class HotelTester {
     public static void main(String[] args) {
         Hotel hotel = new Hotel(5);
+        System.out.println("Initial hotel: " + hotel);
         Reservation res1 = hotel.requestRoom("guest1");
         Reservation res2 = hotel.requestRoom("guest2");
         Reservation res3 = hotel.requestRoom("guest3");
