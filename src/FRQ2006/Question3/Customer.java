@@ -22,15 +22,43 @@ public class Customer {
     // a negative integer when this customer is less than other
     public int compareCustomer(Customer other)
     {
-        if(this.getName().compareTo(other.getName())==0)
+        if(getName().compareTo(other.getName())==0) //if the names are the same, compare their ID
         {
-            return this.getID()-other.getID();
+            return getID()-other.getID();
         }
-        return 0;
+        else
+        return getName().compareTo(other.getName());
+
     }
 
     public static void prefixMerge(Customer[] list1, Customer[] list2, Customer[] result)
     {
+        int ind1=0;
+        int ind2=0;
+        for(int i=0; i<result.length; i++)
+        {
+            int comparison = list1[ind1].compareCustomer(list2[ind2]);
+            if(comparison>0)
+            {
+                result[i]=list2[ind2];
+                ind2++;
+            }
+            else if(comparison==0)
+            {
+                result[i] =list1[ind1];
+                ind1++;
+                ind2++;
+            }
+            else if(comparison<0)
+            {
+                result[i] = list1[ind1];
+                ind1++;
+            }
+        }
+    }
 
+    public String toString()
+    {
+        return name +": "+ ID;
     }
 }
