@@ -4,7 +4,10 @@ public class StudentRecord {
     private int[] scores; // contains scores.length values
                             // scores.length > 1
 
-    // constructors and other data fields not shown
+    public StudentRecord(int[] scoreList)
+    {
+        scores = scoreList;
+    }
 
     // returns the average (arithmetic mean) of the values in scores
     // whose subscripts are between first and last, inclusive
@@ -26,7 +29,7 @@ public class StudentRecord {
     {
         for(int index = 0; index<scores.length-1; index++)
         {
-            if (scores[index]<scores[index+1])
+            if (scores[index+1]<scores[index])
             {
                 return false;
             }
@@ -42,9 +45,9 @@ public class StudentRecord {
     {
         if (hasImproved())
         {
-            return average(((scores.length-1)/2), scores.length-1);
+            return average(((scores.length)/2), scores.length-1);
         }
-            return average(0, scores.length);
+            return average(0, scores.length-1);
         //if hasImproved():
         //take the good top scores then use average() to produce the final average
         //first = (int) (scores.length-1)/2 and last= scores.length-1
