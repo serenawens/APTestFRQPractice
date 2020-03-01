@@ -3,9 +3,9 @@ package FRQ2008.Question4;
 public class SubstringChecker implements Checker {
     private String mustContain;
 
-    public SubstringChecker(String contain)
+    public SubstringChecker(String keyWord)
     {
-        mustContain= contain;
+        mustContain= keyWord;
     }
     @Override
     public boolean accept(String text)
