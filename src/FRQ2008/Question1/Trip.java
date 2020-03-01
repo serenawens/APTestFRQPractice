@@ -36,15 +36,17 @@ public class Trip
            {
                layoverTimes.add(flights.get(i).getArriveTime().minutesUntil(flights.get(i+1).getDepartTime()));
            }
-           int min=1101011;
+           int min = layoverTimes.get(0);
            for(int timeInLayover: layoverTimes)
            {
                while(timeInLayover<min)
                {
-
+                   min=timeInLayover;
                }
            }
+           return  min;
        }
+       return -1;
     }
     // There may be instance variables, constructors, and methods that are not shown.
 }
