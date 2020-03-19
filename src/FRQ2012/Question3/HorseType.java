@@ -1,6 +1,6 @@
 package FRQ2012.Question3;
 
-public class HorseType implements Horse{
+public class HorseType {
     private String name;
     private int weight;
 
