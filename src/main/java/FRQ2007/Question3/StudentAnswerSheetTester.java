@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class StudentAnswerSheetTester {
     public static void main(String[] args) {
-        ArrayList<String> answerSheet = new ArrayList<>();
+        ArrayList<String> answerSheet = new ArrayList<String>();
         answerSheet.add("A");
         answerSheet.add("C");
         answerSheet.add("D");
@@ -16,7 +16,7 @@ public class StudentAnswerSheetTester {
         answerSheet.add("B");
         answerSheet.add("B");
         answerSheet.add("C");
-        ArrayList<String> studentSheet1 = new ArrayList<>();
+        ArrayList<String> studentSheet1 = new ArrayList<String>();
         studentSheet1.add("A");
         studentSheet1.add("B");
         studentSheet1.add("D");
@@ -28,7 +28,7 @@ public class StudentAnswerSheetTester {
         studentSheet1.add("D");
         studentSheet1.add("C");
         StudentAnswerSheet student1 = new StudentAnswerSheet("Marcy",studentSheet1);
-        ArrayList<String> studentSheet2 = new ArrayList<>();
+        ArrayList<String> studentSheet2 = new ArrayList<String>();
         studentSheet2.add("A");
         studentSheet2.add("D");
         studentSheet2.add("D");
@@ -40,7 +40,7 @@ public class StudentAnswerSheetTester {
         studentSheet2.add("B");
         studentSheet2.add("C");
         StudentAnswerSheet student2 = new StudentAnswerSheet("Minnie", studentSheet2);
-        ArrayList<String> studentSheet3 = new ArrayList<>();
+        ArrayList<String> studentSheet3 = new ArrayList<String>();
         studentSheet3.add("A");
         studentSheet3.add("F");
         studentSheet3.add("D");
@@ -58,7 +58,7 @@ public class StudentAnswerSheetTester {
         System.out.println(student2.getScore(answerSheet));
         System.out.println(student3.getScore(answerSheet));
 
-        ArrayList<StudentAnswerSheet> classList = new ArrayList<>();
+        ArrayList<StudentAnswerSheet> classList = new ArrayList<StudentAnswerSheet>();
         classList.add(student1);
         classList.add(student2);
         classList.add(student3);

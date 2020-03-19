@@ -9,7 +9,7 @@ public class Hotel {
 
     public Hotel(int numOfRooms) {
         rooms = new Reservation[numOfRooms];
-        waitList = new ArrayList<>();
+        waitList = new ArrayList<String>();
     }
 
     public Reservation requestRoom(String guestName)
