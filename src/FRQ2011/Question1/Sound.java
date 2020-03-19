@@ -21,16 +21,17 @@ public class Sound {
     public int limitAmplitude(int limit)
     {
         int changed =0;
-        for (int amplitude: samples)
+        for (int i=0; i<samples.length;i++)
         {
-            if(amplitude>0 && amplitude>limit)
+
+            if(samples[i]>0 && samples[i]>limit)
             {
-                amplitude = limit;
+                samples[i] = limit;
                 changed++;
             }
-            else if(amplitude<0 && amplitude<(limit*-1))
+            else if(samples[i]<0 && samples[i]<(limit*-1))
             {
-                amplitude= limit*-1;
+                samples[i]= limit*-1;
                 changed++;
             }
         }
