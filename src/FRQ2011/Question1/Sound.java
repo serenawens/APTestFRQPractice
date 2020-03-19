@@ -31,7 +31,8 @@ public class Sound {
             }
             else if(samples[i]<0 && samples[i]<(limit*-1))
             {
-                samples[i]= limit*-1;
+                samples[i]=
+                        limit*-1;
                 changed++;
             }
         }
@@ -56,5 +57,6 @@ public class Sound {
         {
             trimmedSound[j-numberTrimmed] = samples[j];
         }
+        samples=trimmedSound;
     }
 }
