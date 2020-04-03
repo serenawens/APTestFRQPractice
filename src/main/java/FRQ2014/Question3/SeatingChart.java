@@ -7,6 +7,27 @@ public class SeatingChart {
     /** seats[r][c] represents the Student in row r and column c in the classroom. */
     private Student[][] seats;
 
+    public String toString()
+    {
+       String roster="";
+       for(int row = 0; row<seats.length; row++)
+       {
+           roster+= "[ ";
+           for(int col =0; col<seats[0].length; col++)
+           {
+               if(seats[row][col]==null)
+               {
+                   roster+= "empty, ";
+               }
+               else {
+                   roster += seats[row][col].toString() + ", ";
+               }
+           }
+           roster+= " ] \t";
+       }
+       return roster;
+    }
+
     /** Creates a seating chart with the given number of rows and columns from the students in
      * studentList. Empty seats in the seating chart are represented by null.
      * @param rows the number of rows of seats in the classroom
@@ -28,8 +49,11 @@ public class SeatingChart {
         {
             for(int row=0; row<rows; row++)
             {
-                seats[row][col] = studentList.get(i);
-                i++;
+                if(i<studentList.size())
+                {
+                    seats[row][col] = studentList.get(i);
+                    i++;
+                }
             }
         }
     }
@@ -50,7 +74,7 @@ public class SeatingChart {
         {
             for(int col =0; col<seats[0].length; col++)
             {
-                if(seats[row][col].getAbsenceCount()>allowedAbsences)
+                if( seats[row][col]!=null && seats[row][col].getAbsenceCount()>allowedAbsences)
                 {
                     seats[row][col] = null;
                     removedStudents++;

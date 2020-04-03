@@ -16,4 +16,8 @@ public class Student {
     /** Returns the number of times this Student has missed class. */
     public int getAbsenceCount()
     { return absenceCount; }
+    public String toString()
+    {
+        return name + ": " + absenceCount;
+    }
 }

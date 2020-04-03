@@ -35,10 +35,10 @@ public class FuelDepot {
      * Postcondition: the current location of the robot is locIndex*/
     public void moveToLocation(int locIndex)
     {
-
         while(filler.getCurrentIndex()!=locIndex)
         {
-           if((filler.getCurrentIndex()+1==tanks.size() && filler.isFacingRight()) || (filler.getCurrentIndex()==0 && !filler.isFacingRight()))
+           if((filler.getCurrentIndex()+1==tanks.size() && filler.isFacingRight())
+                   || (filler.getCurrentIndex()==0 && !filler.isFacingRight()))
            {
                filler.changeDirection();
            }
