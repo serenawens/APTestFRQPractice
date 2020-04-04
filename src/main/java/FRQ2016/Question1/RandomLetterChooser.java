@@ -1,6 +1,6 @@
 package FRQ2016.Question1;
 
-public class RandomLetterChooser extends RandomStringChooser {
+public class RandomLetterChooser extends RandomStringChooserFinal {
 
     public RandomLetterChooser(String str)
     {
@@ -9,8 +9,12 @@ public class RandomLetterChooser extends RandomStringChooser {
 
     public static String[] getSingleLetters(String str)
     {
-        String[] ble = {"y"};
-        return ble;
+        String[] letters = new String[str.length()];
+        for(int i=0; i<str.length()-1; i++)
+        {
+            letters[i] = str.substring(i, i+1);
+        }
+        return letters;
     }
 
 }
