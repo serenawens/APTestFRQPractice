@@ -12,7 +12,8 @@ public class StringFormatter {
         wordList.add("LOVE");
         wordList.add("MARK");
         wordList.add("MINE");
-        System.out.println(format(wordList, 24));
+        //System.out.println(format(wordList, 24));
+        
     }
 
     public static int totalLetters(List<String> wordList)

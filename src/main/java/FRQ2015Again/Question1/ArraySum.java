@@ -10,7 +10,7 @@ public class ArraySum {
                         {10,10,4,6,2},
                         {5,3,5,9,6},
                         {7,6,0,2,1}};
-        int[] rowSum = rowSums(arr2D);
+        int[] rowSum = rowSumsA(arr2D);
         String list ="";
         for(int i=0; i< rowSum.length; i++)
         {
@@ -19,8 +19,8 @@ public class ArraySum {
             else
                 list+= rowSum[i];
         }
-        //System.out.println("[ " + list + " ]");
-        System.out.println(isDiverse(arr2D));
+        System.out.println("[ " + list + " ]");
+       // System.out.println(isDiverse(arr2D));
     }
     public static int arraySum(int[] arr)
     {
@@ -30,6 +30,15 @@ public class ArraySum {
             sum += val;
         }
         return sum;
+    }
+    public static int[] rowSumsA(int[][] arr2D)
+    {
+        int rowSum[] = new int[arr2D.length];
+        for(int row=0; row<arr2D.length; row++)
+        {
+            rowSum[row] = arraySum(arr2D[row]);
+        }
+        return rowSum;
     }
     public static int[] rowSums(int[][] arr2D)
     {
