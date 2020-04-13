@@ -1,5 +1,7 @@
 package FRQ2012.Question3;
 
+import java.util.ArrayList;
+
 public class HorseBarn {
     /**
      * The spaces in the barn. Each array element holds a reference to the horse
@@ -37,13 +39,37 @@ public class HorseBarn {
      */
     public int findHorseSpace(String name) {
         for (int i = 0; i < spaces.length; i++) {
-            if (name.equals(spaces[i].getName())) {
+            if (spaces[i]!= null && name.equals(spaces[i].getName())) {
                 return i;
             }
         }
         return -1;
     }
 
+    public void consolidateA()
+    {
+        ArrayList<Horse> temp = new ArrayList<Horse>();
+        for(Horse horse: spaces)
+        {
+            if(horse!=null)
+            {
+                temp.add(horse);
+            }
+        }
+        int horseNum = temp.size();
+        for(int i=0; i<spaces.length; i++)
+        {
+            if(horseNum>0)
+            {
+                spaces[i] = temp.get(i);
+                horseNum--;
+            }
+            else
+            {
+                spaces[i] = null;
+            }
+        }
+    }
     /**
      * Consolidates the barn by moving horses so that the horses are in adjacent spaces,
      * starting at index 0, with no empty space between any two horses.

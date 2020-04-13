@@ -15,7 +15,7 @@ public class HorseBarnTester {
         barn.add(24, new HorseType("H"));
         String list = barn.toString();
         System.out.println(list);
-        barn.consolidate();
+        barn.consolidateA();
         list = barn.toString();
         System.out.println(list);
     }
