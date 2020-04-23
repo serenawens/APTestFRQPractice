@@ -4,14 +4,12 @@ public class PassengerCar extends TrainCar {
     private double baseWeight;
     private int peopleMax;
 
-    public PassengerCar(double baseW, int maxPeople)
-    {
+    public PassengerCar(double baseW, int maxPeople) {
         baseWeight = baseW;
         peopleMax = maxPeople;
     }
 
-    public double getTotalWeight()
-    {
+    public double getTotalWeight() {
         return baseWeight + (peopleMax * 300);
     }
 

@@ -6,12 +6,9 @@ import java.util.ArrayList;
 public class Neighborhood {
     private ArrayList<Family> families;
 
-    public boolean isInNeighborhood(Person person)
-    {
-        for(Family f: families)
-        {
-            if(f.isInFamily(person))
-            {
+    public boolean isInNeighborhood(Person person) {
+        for (Family f : families) {
+            if (f.isInFamily(person)) {
                 return true;
             }
         }
