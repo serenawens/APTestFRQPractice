@@ -23,19 +23,20 @@ public class Sentence {
 
     public String[] getWordsA() {
         String[] wordList = new String[countWords()];
-        int listInd = 0;
         List<Integer> blanks = getBlankPositions();
+        int listIndex = 0;
+        // if there's no blanks, single word
         if (blanks.size() == 0) {
-            wordList[0] = sentence;
+            wordList[listIndex] = sentence;
             return wordList;
         }
         int curr = 0;
         for (int b : blanks) {
-            wordList[listInd] = sentence.substring(curr, b);
+            wordList[listIndex] = sentence.substring(curr, b);
             curr = b + 1;
-            listInd++;
+            listIndex++;
         }
-        wordList[listInd] = sentence.substring(curr);
+        wordList[listIndex] = sentence.substring(curr); //ensuring last word is added
         return wordList;
     }
 

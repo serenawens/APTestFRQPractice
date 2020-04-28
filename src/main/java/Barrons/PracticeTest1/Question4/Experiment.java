@@ -21,12 +21,17 @@ public class Experiment {
     public int mostAcidic() {
         reset();
         int minPH = Integer.MAX_VALUE;
-        for(Solution solution: solutions)
+        int minIndex= 0;
+        for(int i=0; i<solutions.size(); i++)
         {
+            Solution solution = solutions.get(i);
             if(solution.getPH()<minPH)
+            {
                 minPH = solution.getPH();
+                minIndex = i;
+            }
         }
-        arm.moveForward(minPH);
+        arm.moveForward(minIndex);
         if (solutions.get(arm.getCurrentIndex()).getPH() < 7)
             return 1;
         reset();
