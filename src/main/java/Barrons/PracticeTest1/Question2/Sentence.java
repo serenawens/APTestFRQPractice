@@ -21,15 +21,33 @@ public class Sentence {
         return getBlankPositions().size() + 1;
     }
 
+    public String[] getWordsA() {
+        String[] wordList = new String[countWords()];
+        int listInd = 0;
+        List<Integer> blanks = getBlankPositions();
+        if (blanks.size() == 0) {
+            wordList[0] = sentence;
+            return wordList;
+        }
+        int curr = 0;
+        for (int b : blanks) {
+            wordList[listInd] = sentence.substring(curr, b);
+            curr = b + 1;
+            listInd++;
+        }
+        wordList[listInd] = sentence.substring(curr);
+        return wordList;
+    }
+
     public String[] getWords() {
         String[] wordList = new String[countWords()];
         int listInd = 0;
         String word = "";
         for (int i = 0; i < sentence.length(); i++) { //traverse letters
             String letter = sentence.substring(i, i + 1);
-            if (!getBlankPositions().contains(i)) { //if there is no space there
+            if (!letter.equals(" ")) { //if there is no space there
                 word += letter; //add to current word
-                if (i == 5) {
+                if (i == sentence.length() - 1) {
                     wordList[listInd] = word;
                 }
             } else {

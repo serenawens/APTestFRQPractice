@@ -24,6 +24,7 @@ public class Tournament {
             return null;
         }
         slots[index] = new Player(waitingList.get(0), index);
+        waitingList.remove(0);
         return slots[index];
     }
 }
